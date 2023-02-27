@@ -17,7 +17,7 @@ html {
     background-image:linear-gradient(rgba(0, 0, 0, 0.7.1),rgba(0, 0, 0, 0.7)),url('front.jpg');
     background-size: cover;
     background-position: center;
-    height: 75vh; 
+    height: 80vh; 
 }
 
 a {

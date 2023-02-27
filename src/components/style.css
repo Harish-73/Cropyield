@@ -3,6 +3,7 @@ body {
   height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('front.jpg');
   background-size: cover;
+  size: xx-large;
   overflow: hidden;
   background-position: center;
   background-repeat: no-repeat;
@@ -23,9 +24,14 @@ body {
 }
 
 .header h1 {
-  color: rgb(252, 247, 153);
+  color: #fcf799;
   font-size: 40px;
   margin-bottom: 5px;
+}
+
+.signh1{
+  color: #fcf799;
+  font-size: 60px;
 }
 
 .heading {
@@ -47,6 +53,19 @@ body {
     /* height: 10%; */
   }
 
+  .textfield {
+    color: rgb(252, 247, 153);
+    /* color: green; */
+}
+
+
+.signupstyle{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: rgb(252, 247, 153);
+
+}
 
   .uploadOR
   {
@@ -60,7 +79,7 @@ body {
 
   .footer
     {
-       margin: 5%;
+       margin: 5% auto;
     } 
 
     .upload-file
@@ -74,11 +93,16 @@ body {
     }
 
 
-@media screen and (max-width: 560px)
+@media screen and (max-width: 615px)
 {
   .container {
     width: 80%;
     
+  }
+  .signupstyle{
+    color: rgb(252, 247, 153);
+      font-size: 30px;
+      margin-bottom: 5px;
   }
     .header h1 {
       color: rgb(252, 247, 153);
@@ -96,6 +120,9 @@ body {
       color: rgb(252, 247, 153);
       font-size: 15px;
       margin-bottom: 5px;
+    }
+    .upload-file{
+      width:100%;
     }
 
 

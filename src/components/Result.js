@@ -3,6 +3,7 @@ import {Card, Form, Row, Col, Button, Container, FormControl, Table } from 'reac
 // import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import "./styleResult.css";
 import { useNavigate } from "react-router-dom";
+import {logout,useAuth} from '../firebase';
 
 function Result() {
 
@@ -11,9 +12,19 @@ function Result() {
         navigate('/recomendation')
         console.log("HI");
     }
+    const bt={margin:'0px 30px 0px 30px'}
+    function Logout(){
+        logout();
+        localStorage.clear();
+        navigate("/login")
+        
+      }
 
 	return (
         <div>
+             <div align='right'>
+                    <Button size='sm' onClick={() => {Logout()}} style={bt} variant="outline-primary">Logout</Button>
+                </div>
             <div className = "second-main" >
             <nav>
                 <div style = {{"padding-right": "2%"}} className = "main-nav">

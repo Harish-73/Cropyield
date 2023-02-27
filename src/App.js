@@ -4,21 +4,23 @@ import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom
 import Home from "./components/Home";
 import Recomendation from "./components/Recomendation";
 import Result from "./components/Result";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
 // import "./App.css";
 
 function App() {
-	const [data, setdata] = useState({
-		name: "",
-		age: 0,
-		date: "",
-		programming: "",
-	});
+	// const [data, setdata] = useState({
+	// 	name: "",
+	// 	age: 0,
+	// 	date: "",
+	// 	programming: "",
+	// });
 
-  const [sum, setSum] = useState({
+//   const [sum, setSum] = useState({
 		
-	name: "Harish"
+// 	name: "Harish"
 		
-	});
+// 	});
 	// useEffect(() => {
 	// 	fetch("/data").then((res) =>
 	// 		res.json().then((data) => {
@@ -32,17 +34,17 @@ function App() {
 	// 	);
 	// }, []);
 
-  useEffect(() => {
-		fetch("/sum").then((res) =>
-			res.json().then((sum) => {
-				setSum({
-					name: sum.Name
+//   useEffect(() => {
+// 		fetch("/sum").then((res) =>
+// 			res.json().then((sum) => {
+// 				setSum({
+// 					name: sum.Name
 					
 				
-				});
-			})
-		);
-	}, []);
+// 				});
+// 			})
+// 		);
+// 	}, []);
 
 	const marginTop = {marginTop:"20px"};
 
@@ -56,11 +58,16 @@ function App() {
                     
                     <Routes>
                     {/* {!loading && <Route exact path="/login" element={!user ? <LoginFirebase /> : <Admin />} />} */}
-                        <Route path="/" element={<Home/>}/>
+                        <Route path="/home" element={<Home/>}/>
                         {/* <Route path="/register" element={<Registration id={dataId} setDataId={setDataId}/>}/> */}
                         {/* <Route path="/login" element={<LoginForm/>}/> */}
                         <Route path="/result" element={<Result/>}/>
                         <Route path="/recomendation" element={<Recomendation/>}/>
+						<Route path="/" element={<Navigate to="/login" />} />
+						<Route path="/login" element={<Login />} />
+						<Route path="/signup" element={<Signup />} />
+						{/* <Route exact path="/admin" element={<Admin />} /> */}
+						{/* <Route exact path="/file" element={<File />} /> */}
                         {/* <Route path="/list" element={<Candidate getDataId={getDataIdHandler}/>}/> */}
                         {/* <Route path="/edit/" element={<Registration/>}/> */}
                         {/* <Route path="/register" element={<Update id={dataId} setDataId={setDataId}/>}/> */}

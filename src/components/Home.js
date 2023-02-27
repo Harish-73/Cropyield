@@ -2,11 +2,19 @@ import React, { useState, useEffect } from "react";
 import {Card, Form, Row, Col, Button, Container, FormControl, Table } from 'react-bootstrap';
 // import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import "./style.css";
+import {logout,useAuth} from '../firebase';
+
 
 import Result from "./Result";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
+    function Logout(){
+        logout();
+        localStorage.clear();
+        navigate("/login")
+        
+      }
     const navigate = useNavigate()
 	const [data, setdata] = useState({
 		name: "",
@@ -14,6 +22,7 @@ function Home() {
 		date: "",
 		programming: "",
 	});
+    
 
   const [sum, setSum] = useState({
 		
@@ -48,7 +57,7 @@ function Home() {
     const handleSubmit = () =>{
         navigate('/result')
     }
-
+    const bt={margin:'0px 30px 0px 30px'}
     const submitDetails = (event) => {
         event.preventDefault();
         console.log("HI");
@@ -61,6 +70,9 @@ function Home() {
 <div >
 		 
                         <div className="header">
+                        <div align='right'>
+                    <Button size="sm" onClick={() => {Logout()}} style={bt} variant="outline-primary">Logout</Button>
+                </div>
                 <h1 >Image classification Model</h1>
             </div>
            
@@ -87,7 +99,7 @@ function Home() {
                 	<span>OR</span>
                 </div>
                 {/* <form method="post" action="/recommendation"><button class="buttonCase btn-success btn-sm">View</button></form> */}
-
+                
 
                 <div className="upload-link">
                 <form onSubmit={handleSubmit} action="/Result" method="post" enctype="multipart/form-data">
@@ -118,7 +130,7 @@ function Home() {
                     <p style={{"fontSize" : "20px", "textAlign": "center","color": "white"}}>This Model create for the Disease classNameification for Agriculture</p>
                 </div>
          
-
+                
         </div>
     //  </div>
 

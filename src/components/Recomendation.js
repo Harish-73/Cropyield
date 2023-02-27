@@ -2,13 +2,25 @@ import React, { useState, useEffect } from "react";
 import {Card, Form, Row, Col, Button, Container, FormControl } from 'react-bootstrap';
 // import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import "./styleResult.css";
+import {logout,useAuth} from '../firebase';
+import { useNavigate } from "react-router-dom";
 
 function Recomendation() {
+    const navigate = useNavigate()
+    const bt={margin:'0px 30px 0px 30px'}
+    function Logout(){
+        logout();
+        localStorage.clear();
+        navigate("/login")
+        
+      }
 	
 
 	return (
         <div>
-            
+            <div align='right'>
+                    <Button size='sm' onClick={() => {Logout()}} style={bt} variant="outline-primary">Logout</Button>
+                </div>
             <div className="header">
                 <h1 >Image classification Model</h1>
             </div>
@@ -27,6 +39,7 @@ function Recomendation() {
             </Card>
             
         </div>
+        
 
         
 	);
